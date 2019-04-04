@@ -11,7 +11,7 @@ parser = OptionParser()
 parser.add_option("-T", "--ifMotifsGivenInFile", type="str", action="store", default = "0",
                         dest="ifMotifsGivenInFile", help="Specify 1 if the motifs are given in a file, 0 if a single motif is to be planted. [default: %default]")
 parser.add_option("-F", "--motifsListFilename", type="str", action="store", default = "motifsListFilename.list",
-                        dest="motifsListFilename", help="Name of the file providing the list of motifs.[default: %default]. If single motif (-T 1), this a motif.")
+                        dest="motifsListFilename", help="Name of the file providing the list of motifs.[default: %default]. If single motif (-T 0), this a motif.")
 			#All should be present in the current directory
 parser.add_option("-N", "--numOfSeqs", type="int", action="store", default = 1000,
                         dest="numOfSeqs", help="Number of sequences to generate.[default: %default]")
