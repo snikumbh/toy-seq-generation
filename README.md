@@ -2,7 +2,10 @@
 
 This is a very simple python script to generate toy (collection of) sequences with specific set of motifs with the desired mutation rates and starting positions of choice. Below is an example of how to do this. The output is a FASTA file (.fasta) with the generated sequences.
 
+Note: This is a repurposed/rewritten version of datagen.py/datafuncs.py (just the relevant function) from the [https://github.com/ratschlab/easysvm](easysvm toolbox based on Shogun) for personal use. I rewrote it when I faced issues with installation of easysvm on a machine I was then working on.
 
+
+## Usage
 ```
 python generateData.py -T 1 -F <file_w_list_of_motifs> -N 500 -I 1000 -X 1500 -M 0.1 -O <output_filename>
 ```
