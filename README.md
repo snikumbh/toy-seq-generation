@@ -21,7 +21,7 @@ Options:
   -F MOTIFSLISTFILENAME, --motifsListFilename=MOTIFSLISTFILENAME
                         Name of the file providing the list of
                         motifs.[default: motifsListFilename.list]. If single
-                        motif (-T 1), this a motif.
+                        motif (-T 0), this a motif.
   -N NUMOFSEQS, --numOfSeqs=NUMOFSEQS
                         Number of sequences to generate.[default: 1000]
   -I SEQLENMIN, --seqLenMin=SEQLENMIN
@@ -48,4 +48,4 @@ Options:
 Few examples of motifs given in files are provided (see `motif.list*`).
 
 
-Any suggestions, comments, feature requests as either @issues or @pullrequests are welcome!
+Any suggestions, comments, feature requests as either [#issues] or [#pull] are welcome!
