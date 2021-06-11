@@ -45,26 +45,26 @@ def motifgen(nMotifs, motifs, numseq, seqlenmin, seqlenmax, posstart, posend, mu
         metadata = 'motifgen(%s,%d,%d,%d,%1.2f,%d)' % (nMotifs, numseq, seqlenmin, seqlenmax, mutrate, nposmutate)
     acgt='acgt'
     seqlist = []
-    for i in xrange(0,numseq):
+    for i in range(0,numseq):
         str=[] ;
         seqlen=random.randint(seqlenmin,seqlenmax);
-        for l in xrange(0,seqlen):
+        for l in range(0,seqlen):
             str.append(acgt[random.randint(0,3)])
 
         if nMotifs > 1 or dummyFlag == 1:
-            for n in xrange(0,nMotifs):
+            for n in range(0,nMotifs):
                 motif = motifs[n]
                 if posend[n] == 0:
                     #place the motif throughout the sequence, separation is given by posstart[n] value
                     pos = posstart[n]
                     while pos < seqlen: 
-                        for l in xrange(0,len(motif)):
+                        for l in range(0,len(motif)):
                             if (pos+l<seqlen) and (pos+l>=0):
                                 str[pos+l-1]=motif[l].upper()
                         pos = pos + posstart[n]
                 else:
                     pos=random.randint(posstart[n],posend[n]);
-                    for l in xrange(0,len(motif)):
+                    for l in range(0,len(motif)):
                         if (random.random()>=mutrate) and (pos+l<seqlen) and (pos+l>=0):
                             str[pos+l-1]=motif[l].upper()
             seqlist.append(''.join(str))
@@ -76,7 +76,7 @@ def motifgen(nMotifs, motifs, numseq, seqlenmin, seqlenmax, posstart, posend, mu
             random.shuffle(items)
             mutate_this_pos = items[0:(nposmutate)]
             print(mutate_this_pos)
-            for l in xrange(0,len(motif)):
+            for l in range(0,len(motif)):
                 if (l in mutate_this_pos and random.random()<=mutrate):
                     print("mutate_samarth")
                 else:
@@ -104,7 +104,7 @@ if options.ifMotifsGivenInFile == "1":
         a, b = motifgen(len(motifsList), motifsList, options.numOfSeqs, options.seqLenMin, options.seqLenMax, posStart, posEnd, options.mutrate, options.nPosMutate)
         #print '\n'.join(b)
     with open(options.outputFastaFilename, 'w') as f:
-        for l in xrange(0,len(b)):
+        for l in range(0,len(b)):
             f.write('>' + a + '_sequence' + str(l+1)+ '_'+options.appendStr+ '\n')
             f.write(str(b[l]))
             f.write('\n')
@@ -113,7 +113,7 @@ else:
     a, b = motifgen(1, options.motifsListFilename, options.numOfSeqs, options.seqLenMin, options.seqLenMax, options.posStart, options.posEnd, options.mutrate, options.nPosMutate)
     #print a, b
     with open(options.outputFastaFilename, 'w') as f:
-        for l in xrange(0,len(b)):
+        for l in range(0,len(b)):
             f.write('>' + a + '_sequence' + str(l+1)+ '_'+options.appendStr + '\n')
             f.write(str(b[l]))
             f.write('\n')
